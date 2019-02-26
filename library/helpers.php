@@ -11,7 +11,7 @@ function my_theme_post_meta() {
     echo '<a href="'.esc_url(get_permalink()).'">';
     echo '<time datetime="'.esc_attr(get_the_date('c')).'">' .esc_html(get_the_date()).'</time>';
     echo '</a>';
-    echo 'By <a href="'.esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )).'">' .esc_html(get_the_autor()). '</a>';
+    echo 'By <a href="'.esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )).'">' .esc_html(get_the_author()). '</a>';
 }
 
 function my_theme_readmore_link() {
