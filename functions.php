@@ -7,5 +7,3 @@
  */
 
 require_once('library/helpers.php');
-
-?>
