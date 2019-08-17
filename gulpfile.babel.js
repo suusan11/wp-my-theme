@@ -22,3 +22,7 @@ export const styles = (done) => {
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(gulp.dest('paths.styles.dest'));
 }
+
+export const watch = () => {
+  gulp.watch('src/assets/scss/**/*/scss', styles);
+}
