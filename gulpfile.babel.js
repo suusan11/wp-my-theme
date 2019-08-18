@@ -5,6 +5,7 @@ import cleanCSS from 'gulp-clean';
 import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import imagesmin from 'gulp-imagemin';
+import del from 'del';
 
 const PRODUCTION = yargs.argv.prod;
 
@@ -21,6 +22,9 @@ const paths = {
     src: ['src/assets/**/*', '!src/assets/{images,js,scss}', '!src/assets/{images,js,scss}/**/*'],
     dest: 'dist/assets'
   }
+}
+export const clean = () => {
+  return del(['dist']);
 }
 
 export const styles = (done) => {
