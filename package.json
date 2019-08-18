@@ -18,7 +18,9 @@
     "url": "https://github.com/suusan11/wp-my-theme/issues"
   },
   "homepage": "https://github.com/suusan11/wp-my-theme#readme",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
