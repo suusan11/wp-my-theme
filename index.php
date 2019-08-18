@@ -22,18 +22,18 @@
 </h2>
 
 <div>
-    <?php my_theme_post_meta(); ?>
+    <?php _themename_post_meta(); ?>
 </div>
 <div>
     <?php the_excerpt(); ?>
 </div>
-<?php my_theme_readmore_link(); ?>
+<?php _themename_readmore_link(); ?>
 <?php } ?>
 
 <?php the_posts_pagination(); ?>
 <?php } else { ?>
 
-<p><?php __('no posts yet', 'mytheme'); ?>
+<p><?php __('no posts yet', '_themename'); ?>
 </p>
 
 <?php } ?>

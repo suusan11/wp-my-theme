@@ -11,6 +11,8 @@ import uglify from 'gulp-uglify';
 import named from 'vinyl-named';
 import browserSync from 'browser-sync';
 import zip from 'gulp-zip';
+import replace from 'gulp-replace';
+import info from './package';
 
 const server = browserSync.create();
 const PRODUCTION = yargs.argv.prod;
@@ -115,7 +117,8 @@ export const scripts = () => {
 
 export const compress = () => {
   return gulp.src(paths.package.src)
-    .pipe(zip('my_theme.zip'))
+    .pipe(replace('_themename', info.name))
+    .pipe(zip(`${info.name}.zip`))
     .pipe(gulp.dest(paths.package.dest));
 }
 export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);
