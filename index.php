@@ -31,6 +31,7 @@
 <?php } ?>
 
 <?php the_posts_pagination(); ?>
+<?php do_action('_themename_after_pagination'); ?>
 <?php } else { ?>
 
 <p><?php __('no posts yet', '_themename'); ?>
