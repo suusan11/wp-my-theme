@@ -10,3 +10,4 @@ require_once('library/helpers.php');
 require_once('library/enqueue-assets.php');
 require_once('library/sidebars.php');
 require_once('library/theme-support.php');
+require_once('library/navigation.php');
