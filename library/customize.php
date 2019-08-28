@@ -12,7 +12,7 @@
 
      $wp_customize -> add_setting('_themename_site_info', array(
       'default' => '',
-      'sanitize_callback' => 'sanitize_text_field'
+      'sanitize_callback' => '_themaname_sanitize_site_info'
     ));
 
      $wp_customize -> add_control('_themename_site_info', array(
@@ -22,3 +22,12 @@
     ));
  }
 add_action('customize_register', '_themename_customize_register');
+
+function _themaname_sanitize_site_info($input)
+{
+    $allowed = array('a' => array(
+    'href' => array(),
+    'title' => array()
+  ));
+    return wp_kses($input, $allowed);
+}
