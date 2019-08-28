@@ -21,14 +21,22 @@ function _themename_aria_hasdropsown($atts, $item, $args)
 }
 add_filter('nav_menu_link_attributes', '_themename_aria_hasdropsown', 10, 3);
 
+function _themename_submenu_button($dir = 'down')
+{
+    $button = '<button class="menu-button">';
+    $button .= '<i class="fa fa-angle-' . $dir . '" aria-hidden="true"></i>';
+    $button .= '</button>';
+    return $button;
+}
+
 function _themename_dropdown_icon($title, $item, $args, $depth)
 {
     if ($args -> theme_location == 'main-menu') {
         if (in_array('menu-item-has-children', $item -> classes)) {
             if ($depth == 0) {
-                $title .= '<i class="fa fa-angle-down" aria-hidden="true"></i>';
+                $title .= _themename_submenu_button('down');
             } else {
-                $title .= '<i class="fa fa-angle-right" aria-hidden="true"></i>';
+                $title .= _themename_submenu_button('right');
             }
         }
     }
