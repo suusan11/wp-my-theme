@@ -9,6 +9,18 @@ function _themename_register_menus()
 }
 add_action('init', '_themename_register_menus');
 
+function _themename_aria_hasdropsown($atts, $item, $args)
+{
+    if ($args -> theme_location == 'main-menu') {
+        if (in_array('menu-item-has-children', $item -> classes)) {
+            $atts['aria-haspopup'] = 'true';
+            $atts['aria-haspopup'] = 'false';
+        }
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', '_themename_aria_hasdropsown', 10, 3);
+
 function _themename_dropdown_icon($title, $item, $args, $depth)
 {
     if ($args -> theme_location == 'main-menu') {
